@@ -1,7 +1,7 @@
-## returns the hospital with the lowest 30 day
+## returns a hospital with given rank (num arg) in given state
 ## mortality rate for heart attack, heart failure, or pneumonia
 
-best <- function (state, outcome) {
+rankhospital <- function(state, outcome, num = "best") {
   ## Read outcome data
   data <- read.csv("outcome-of-care-measures.csv", colClasses = "character", na.strings = "Not Available")
   
@@ -16,20 +16,32 @@ best <- function (state, outcome) {
   
   ## returns the col # based on outcome input
   outcome_col <- if(outcome == "heart attack") {
-      11
+    11
   } else if (outcome == "heart failure") {
-      17
+    17
   } else if (outcome == "pneumonia") {
-      23
+    23
   } 
   
   #convert death rate to numeric
   y <- as.numeric(data[,outcome_col])
-  data <- data[order(y),] #order by death rate
+  data <- data[order(y, data[,2]),]
+  
   ## subset data based on selected state and outcome - returns data frame with hospital name and death rate
   statesub <- subset(data, data$State== state, select = c(2, outcome_col))
   
-  #sort by outcome_col lowest to highest
-  #return lowest
-  statesub[1,1]
+  ## Return hospital name in that state with the given rank
+  ## 30-day death rate
+  finalsub <- na.omit(statesub)
+  if (num == "worst") {
+    finalsub[nrow(finalsub),1]
+  }
+  else if (num == "best") {
+    finalsub[1,1]
+  }
+  else {
+    finalsub[num,1]
+  }
 }
+
+
