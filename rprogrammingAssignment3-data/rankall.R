@@ -22,24 +22,18 @@ rankall <- function(outcome, num = "best") {
   } 
   
   y <- as.numeric(data[,outcome_col])
-  ## create a dataframe with state, hospital, and outcome rate
-  newdata <- data.frame(data$State, data$Hospital.Name, y)
-  newdata <- newdata[order(newdata[,1], newdata[,3], newdata[,2]),] #order by outcome
-  newdata <- na.omit(newdata) #get rid of NAs
-  splitdata <- split(newdata, newdata[,1]) #split data by state
+  
+  ## sort data by state and outcome col and get rid of NA
+  data <- na.omit(data[order(data$State, y),])
   
   ## for each state return the hospital with given rank (num)
-  result <- c()
-  for (s in 1:length(splitdata)) {
-    result[s] <- c(newdata[num,2])
-  }
-  
-  result
+
+  answer <- split(data, data$State)
+  final <- lapply(answer, function(returnnum) {returnnum[num,2]})
+  final
   # OLD CODE: statesub <- subset(data, data$State== state, select = c(2, outcome_col))
   
   ## Return hospital name in that state with the given rank
   ## 30-day death rate
 
 }
-
-
