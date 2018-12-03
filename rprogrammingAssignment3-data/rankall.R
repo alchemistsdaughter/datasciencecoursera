@@ -29,10 +29,8 @@ rankall <- function(outcome, num = "best") {
   ## for each state return the hospital with given rank (num)
 
   answer <- split(data, data$State)
-  final <- lapply(answer, function(returnnum) {returnnum[num,2]})
-  final
-  # OLD CODE: statesub <- subset(data, data$State== state, select = c(2, outcome_col))
-  
+  final <- lapply(answer, function(returnhospital) {returnhospital[num,2]})
+
   ## Return hospital name in that state with the given rank
   ## 30-day death rate
 
