@@ -1,5 +1,5 @@
-#Code Book
-##This code book describes the data and processes used to produce the final tidy data set. 
+# Code Book
+## This code book describes the data and processes used to produce the final tidy data set. 
 
 
 **Original Data:**
@@ -26,7 +26,7 @@ activity: activities tracked during experiements (includes Walking, Walking Upsa
 mean(): Mean value
 std(): Standard deviation
 
-###run_analysis.R prepares the raw data and manipulates it to produce the final tiday data set as follows: 
+### run_analysis.R prepares the raw data and manipulates it to produce the final tiday data set as follows: 
 1. Download all libraries, the specified file, and unzips the UCI HAR Dataset
 2. Read the data sets that will be merged into one data table
 	- activitesTest + activitiesTrain <- y_test.txt + y_train.txt contains the test and train data of activities
