@@ -5,7 +5,7 @@
 **Original Data:**
 Sourced from experiments carried out with a group of 30 volunteers within age bracket of 19-48 years. 
 
-The files that where used in the analysis (exludes all data contained in the Inertial Signals folders)
+The files that where used in the analysis (exludes all data contained in the Inertial Signals folders)<br>
 *Activity*
 test/y_test.txt
 train/y_train.txt
