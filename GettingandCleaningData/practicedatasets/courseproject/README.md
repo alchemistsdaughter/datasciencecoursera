@@ -1,6 +1,6 @@
 # Peer-graded Assignment: Getting and Cleaning Data Course Project
 
-<p>This repository is my submission for the final project for the coursera course "Getting and Cleaning Data". The end product is a tidy data set of data collected <br> from the accelerometers
+<p>This repository is my submission for the final project for the coursera course "Getting and Cleaning Data". The end product is a tidy data set of data collected from the accelerometers
 from the Samsung Galacy S smartphone and that can be used for later analysis.</p>
 
 **Initial Data Pulled:**
