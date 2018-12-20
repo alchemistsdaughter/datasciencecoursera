@@ -21,10 +21,10 @@ test/X_test.txt
 features.txt (names of the features recorded)
 
 **Variable Definitions**
-subject: test subjects involved in original study
-activity: activities tracked during experiements (includes Walking, Walking Upsatirs, Walking Downstairs, Sitting, Standing, and Laying (Laying down))
-mean(): Mean value
-std(): Standard deviation
+subject: test subjects involved in original study<br>
+activity: activities tracked during experiements (includes Walking, Walking Upsatirs, Walking Downstairs, Sitting, Standing, and Laying (Laying down))<br>
+mean(): Mean value <br>
+std(): Standard deviation<br>
 
 ### run_analysis.R prepares the raw data and manipulates it to produce the final tiday data set as follows: 
 1. Download all libraries, the specified file, and unzips the UCI HAR Dataset
